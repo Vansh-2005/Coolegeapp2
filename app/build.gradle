@@ -1,0 +1,123 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+}
+//def keystoreReleasePropertiesFile = rootProject.file("keystore-release.properties")
+//def keystoreReleaseProperties = new Properties()
+//keystoreReleaseProperties.load(new FileInputStream(keystoreReleasePropertiesFile))
+
+android {
+    compileSdkVersion 32
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.dpbs.collegeapp"
+        minSdkVersion 19
+        targetSdkVersion 30
+        versionCode 100
+        versionName "1.0.0"
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+//    signingConfigs {
+//        Release {
+//            keyAlias keystoreReleaseProperties['keyAlias']
+//            keyPassword keystoreReleaseProperties['keyPassword']
+//            storeFile file(keystoreReleaseProperties['storeFile'])
+//            storePassword keystoreReleaseProperties['storePassword']
+//        }
+//    }
+
+    flavorDimensions  "server"
+
+    productFlavors {
+        collegeapp {
+            dimension "server"
+           // signingConfig signingConfigs.Release
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            debuggable true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//            signingConfig signingConfigs.reunionRelease
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.6.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.firebase:firebase-database:20.1.0'
+    implementation 'com.google.firebase:firebase-storage:20.1.0'
+    implementation 'com.google.firebase:firebase-firestore:24.4.1'
+    //messaging
+    implementation 'com.google.firebase:firebase-inappmessaging-display:20.2.0'
+    implementation 'com.google.firebase:firebase-messaging:23.1.1'
+    implementation 'com.google.firebase:firebase-auth:21.1.0'
+
+
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+
+    //dependencies for bottom navigation
+    implementation 'androidx.navigation:navigation-fragment:2.3.0'
+    implementation 'androidx.navigation:navigation-ui:2.3.0'
+
+    implementation 'com.google.android.material:material:1.3.0-alpha01'
+    implementation platform('com.google.firebase:firebase-bom:31.1.1')
+    implementation 'com.google.firebase:firebase-analytics:21.2.0'
+    implementation 'com.google.firebase:firebase-auth'
+    //Image retrivel
+    implementation 'com.google.firebase:firebase-auth:19.2.0'
+    implementation 'com.google.firebase:firebase-database'
+
+    //Crashlytics
+    implementation 'com.google.firebase:firebase-crashlytics:18.3.2'
+    implementation 'com.google.firebase:firebase-analytics'
+
+
+    //Dependency for imageslider
+    implementation 'com.github.smarteist:autoimageslider:1.2.0'
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    androidTestImplementation 'junit:junit:4.12'
+    androidTestImplementation 'junit:junit:4.12'
+    annotationProcessor'com.github.bumptech.glide:compiler:4.11.0'
+
+    //Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    implementation 'de.hdodenhof:circleimageview:3.0.1'
+    implementation 'com.android.support:multidex:1.0.3'
+
+    //Shimmer Animation
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+    //for Zooming effect
+    implementation 'com.github.chrisbanes:PhotoView:2.3.0'
+    //For youtube player
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
+    //PDF viewer
+   implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+    //For progressbar in pdf
+    implementation 'com.github.kk121:File-Loader:1.2'
+    //Contact Us
+    implementation 'io.github.medyo:android-about-page:2.0.0'
+}

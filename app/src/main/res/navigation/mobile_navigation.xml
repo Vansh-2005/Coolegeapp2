@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_home">
+
+    <fragment android:id="@+id/navigation_home"
+    android:name="com.dpbs.collegeapp.ui.home.HomeFragment"
+        android:label="Home"
+        tools:Layout = "@layout/fragment_home"/>
+
+    <fragment android:id="@+id/navigation_notice"
+    android:name="com.dpbs.collegeapp.ui.notice.NoticeFragment"
+        android:label="Notice"
+        tools:Layout = "@layout/fragment_Notice"/>
+
+    <fragment android:id="@+id/navigation_faculty"
+    android:name="com.dpbs.collegeapp.ui.faculty.FacultyFragment"
+        android:label="Faculty"
+        tools:Layout = "@layout/fragment_faculty"/>
+
+    <fragment android:id="@+id/navigation_gallery"
+    android:name="com.dpbs.collegeapp.ui.gallery.GalleryFragment"
+        android:label="Gallery"
+        tools:Layout = "@layout/fragment_gallery"/>
+
+    <fragment android:id="@+id/navigation_about"
+    android:name="com.dpbs.collegeapp.ui.about.AboutFragment"
+        android:label="About"
+        tools:Layout = "@layout/fragment_about"/>
+
+
+</navigation>
