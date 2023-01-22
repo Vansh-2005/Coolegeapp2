@@ -57,10 +57,10 @@ public class NoticeFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot datasnapshot) {
                 list = new ArrayList<>();
                 for (DataSnapshot snapshot : datasnapshot.getChildren()) {
-                    com.dpbs.collegeapp.ui.notice.NoticeData data = snapshot.getValue(com.dpbs.collegeapp.ui.notice.NoticeData.class);
+                    NoticeData data = snapshot.getValue(NoticeData.class);
                     list.add(data);
                 }
-                adapter = new com.dpbs.collegeapp.ui.notice.NoticeAdapter(getContext(), list);
+                adapter = new NoticeAdapter(getContext(), list);
                 adapter.notifyDataSetChanged();
 
 

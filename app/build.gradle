@@ -3,9 +3,9 @@ plugins {
     id 'com.google.gms.google-services'
     id 'com.google.firebase.crashlytics'
 }
-//def keystoreReleasePropertiesFile = rootProject.file("keystore-release.properties")
-//def keystoreReleaseProperties = new Properties()
-//keystoreReleaseProperties.load(new FileInputStream(keystoreReleasePropertiesFile))
+def keystoreReleasePropertiesFile = rootProject.file("keystore-release.properties")
+def keystoreReleaseProperties = new Properties()
+keystoreReleaseProperties.load(new FileInputStream(keystoreReleasePropertiesFile))
 
 android {
     compileSdkVersion 32
@@ -21,21 +21,21 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-//    signingConfigs {
-//        Release {
-//            keyAlias keystoreReleaseProperties['keyAlias']
-//            keyPassword keystoreReleaseProperties['keyPassword']
-//            storeFile file(keystoreReleaseProperties['storeFile'])
-//            storePassword keystoreReleaseProperties['storePassword']
-//        }
-//    }
+    signingConfigs {
+        Release {
+            keyAlias keystoreReleaseProperties['keyAlias']
+            keyPassword keystoreReleaseProperties['keyPassword']
+            storeFile file(keystoreReleaseProperties['storeFile'])
+            storePassword keystoreReleaseProperties['storePassword']
+        }
+    }
 
     flavorDimensions  "server"
 
     productFlavors {
         collegeapp {
             dimension "server"
-           // signingConfig signingConfigs.Release
+            signingConfig signingConfigs.Release
         }
     }
 
