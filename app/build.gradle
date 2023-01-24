@@ -14,9 +14,9 @@ android {
     defaultConfig {
         applicationId "com.dpbs.collegeapp"
         minSdkVersion 19
-        targetSdkVersion 30
-        versionCode 100
-        versionName "1.0.0"
+        targetSdkVersion 31
+        versionCode 101
+        versionName "1.0.1"
         multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -46,7 +46,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         release {
-            minifyEnabled true
+            minifyEnabled false
             debuggable false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 //            signingConfig signingConfigs.reunionRelease

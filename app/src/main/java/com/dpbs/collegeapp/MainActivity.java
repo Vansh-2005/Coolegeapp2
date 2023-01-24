@@ -10,8 +10,10 @@ import androidx.navigation.ui.NavigationUI;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -24,6 +26,7 @@ import com.dpbs.collegeapp.authentication.LoginActivity;
 import com.dpbs.collegeapp.drawer_details.ContactUsActivity;
 import com.dpbs.collegeapp.drawer_details.DeveloperActivity;
 import com.dpbs.collegeapp.ui.Videos.YoutubePlayerActivity;
+import com.dpbs.collegeapp.ui.home.HomeFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -42,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private android.widget.Button Button;
     private FirebaseAuth auth;
     private MenuItem item;
+   // private static  int SPLASH_TIME_OUT = 3000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +71,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
 
         NavigationUI.setupWithNavController(bottomNavigationView,navController);
-
+//
+//        new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                SharedPreferences sharedPreferences = getSharedPreferences(LoginActivity.PREFS_NAME,0);
+//                boolean hasLoggedIn = sharedPreferences.getBoolean("hasLoggedIn",false);
+//
+//                if (hasLoggedIn){
+//                    Intent intent = new Intent(MainActivity.this, HomeFragment.class);
+//                    startActivity(intent);
+//                    finish();
+//                }
+//                else{
+//                    Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+//                    startActivity(intent);
+//                    finish();
+//                }
+//            }
+//        },SPLASH_TIME_OUT);
+//
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

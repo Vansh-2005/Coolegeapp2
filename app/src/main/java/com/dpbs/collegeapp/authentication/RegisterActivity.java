@@ -62,7 +62,7 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
     private void openLogin() {
-        startActivity(new Intent(RegisterActivity.this, com.dpbs.collegeapp.authentication.LoginActivity.class));
+        startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
         finish();
     }
 

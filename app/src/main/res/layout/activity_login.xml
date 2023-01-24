@@ -123,11 +123,13 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Not yet registered ?"/>
+                                android:text="Not yet registered ?"
+                                android:textSize="16dp"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Register here"
+                                android:textSize="18dp"
                                 android:layout_marginLeft="8dp"
                                 android:id="@+id/openReg"
                                 android:textColor="@color/colorPrimary"/>
@@ -139,6 +141,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Forget Password ?"
+                            android:textSize="18dp"
                             android:textColor="@color/colorPrimary" />
                     </LinearLayout>
 

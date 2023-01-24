@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button loginBtn;
     private String email,password;
     private FirebaseAuth auth;
+//    public static String PREFS_NAME = "MyPrefsFile";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +50,13 @@ public class LoginActivity extends AppCompatActivity {
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
+//                SharedPreferences sharedPreferences = getSharedPreferences(LoginActivity.PREFS_NAME,0);
+//                SharedPreferences.Editor editor = sharedPreferences.edit();
+//
+//                editor.putBoolean("hasLoggedIn",true);
+//                editor.commit();
                 validateData();
             }
         });
