@@ -31,15 +31,7 @@
                     android:textStyle="bold"
                     android:fontFamily="@font/latoregular"
                     android:textSize="@dimen/title_size"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/teacherEmail"
-                    android:text="Vansh@gmail.com"
-                    android:textColor="@color/textColor"
-                    android:fontFamily="@font/latoregular"
-                    android:textSize="@dimen/text_size"
-                    android:layout_marginTop="5dp"/>
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -48,6 +40,16 @@
                     android:textColor="@color/textColor"
                     android:fontFamily="@font/latoregular"
                     android:textSize="20sp"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/teacherEmail"
+                    android:text="Vansh@gmail.com"
+                    android:textColor="@color/textColor"
+                    android:fontFamily="@font/latoregular"
+                    android:textSize="@dimen/text_size"
                     android:layout_marginTop="5dp"/>
 
             </LinearLayout>
