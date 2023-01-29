@@ -25,11 +25,13 @@ import java.util.List;
 
 public class FacultyFragment extends Fragment {
     private RecyclerView bcaDepartment, bcomDepartment,CmscDepartment,doeDepartment,dopDepartment,docDepartment,domDepartment
-            ,dosDepartment,dopsDepartment,dopeDepartment,dospgDepartment,DoeDepartment,DosDepartment,dohDepartment,doenDepartment;
-    ;
+            ,dosDepartment,dopsDepartment,dopeDepartment,dospgDepartment,DoeDepartment,DosDepartment,dohDepartment,doenDepartment
+            ,princDepartment;
+
     private LinearLayout bcaNoData,bcomNoData,CmscNoData,doeNoData,dopNoData,docNoData,domNoData,dosNoData,dopsNoData
-            ,dopeNoData,dospgNoData,DoeNoData,DosNoData,dohNoData,doenNoData;
-    private List<TeacherData> list1, list2, list3,list4,list5,list6,list7,list8,list9,list10,list11,list12,list13,list14,list15;
+            ,dopeNoData,dospgNoData,DoeNoData,DosNoData,dohNoData,doenNoData,princNoData;
+    private List<TeacherData> list1, list2, list3,list4,list5,list6,list7,list8,list9,list10,list11,list12,list13
+            ,list14,list15,list16;
 
     private ProgressBar progressBar;
 
@@ -42,6 +44,7 @@ public class FacultyFragment extends Fragment {
 
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_faculty, container, false);
+
         bcaNoData = view.findViewById(R.id.bcaNoData);
         bcomNoData = view.findViewById(R.id.bcomNoData);
         CmscNoData= view.findViewById(R.id.CmscNoData);
@@ -57,6 +60,7 @@ public class FacultyFragment extends Fragment {
         DosNoData= view.findViewById(R.id.DosNoData);
         dohNoData= view.findViewById(R.id.dohNoData);
         doenNoData= view.findViewById(R.id.doenNoData);
+        princNoData=view.findViewById(R.id.princNoData);
 
 
         progressBar = view.findViewById(R.id.progressBarN);
@@ -76,6 +80,7 @@ public class FacultyFragment extends Fragment {
         DosDepartment= view.findViewById(R.id.DosDepartment);
         dohDepartment=view. findViewById(R.id.dohDepartment);
         doenDepartment= view.findViewById(R.id.doenDepartment);
+        princDepartment=view.findViewById(R.id.princDepartment);
 
 
         reference = FirebaseDatabase.getInstance().getReference().child("teacher");
@@ -94,9 +99,46 @@ public class FacultyFragment extends Fragment {
         DosDepartment();
         dohDepartment();
         doenDepartment();
+        princDepartment();
 
         return view;
     }
+    private void princDepartment() {
+
+        dbRef = reference.child("Principal");
+        dbRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                list16 = new ArrayList<>();
+                if (!dataSnapshot.exists()) {
+                    princNoData.setVisibility(View.VISIBLE);
+                    princDepartment.setVisibility(View.GONE);
+                } else {
+                    princNoData.setVisibility(View.GONE);
+                    princDepartment.setVisibility(View.VISIBLE);
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        TeacherData data = snapshot.getValue(TeacherData.class);
+                        list16.add(data);
+                    }
+                    princDepartment.setHasFixedSize(true);
+                    princDepartment.setLayoutManager(new LinearLayoutManager(getContext()));
+                    adapter = new TeacherAdapter(list16, getContext());
+                    princDepartment.setAdapter(adapter);
+                    progressBar.setVisibility(View.GONE);
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                progressBar.setVisibility(View.GONE);
+
+                Toast.makeText(getContext(), databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+
 
     private void bcaDepartment() {
 

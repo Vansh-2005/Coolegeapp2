@@ -36,7 +36,7 @@ public class AboutFragment extends Fragment {
         viewPager.setAdapter(adapter);
 
         ImageView imageView = view.findViewById(R.id.college_image);
-        Glide.with(getContext()).load("https://firebasestorage.googleapis.com/v0/b/dpbs-college-app.appspot.com/o/Slider%20Images%2Fprincipal.jpeg?alt=media&token=488a829f-e8f6-44a2-8e2c-f045d0500c92")
+        Glide.with(getContext()).load("https://firebasestorage.googleapis.com/v0/b/dpbs-college-app.appspot.com/o/Other%20Images%2Fprincipal%20sir.JPG?alt=media&token=4563db5b-0d18-461c-ae7e-1af81b21dca2")
                 .into(imageView);
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
 

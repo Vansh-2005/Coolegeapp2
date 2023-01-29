@@ -10,7 +10,7 @@
 
     <item android:id="@+id/navigation_website"
         android:title="Website"
-        android:icon="@drawable/ic_website"/>
+        android:icon="@drawable/baseline_web_24"/>
 
     <item android:id="@+id/navigation_share"
         android:title="Share"

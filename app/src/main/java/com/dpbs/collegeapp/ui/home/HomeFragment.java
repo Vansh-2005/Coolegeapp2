@@ -16,6 +16,7 @@ import com.dpbs.collegeapp.CourseDescriptionHome.BcaDepartmentActivity;
 import com.dpbs.collegeapp.CourseDescriptionHome.BcomDepartmentActivity;
 import com.dpbs.collegeapp.CourseDescriptionHome.BscDepartmentActivity;
 import com.dpbs.collegeapp.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.smarteist.autoimageslider.DefaultSliderView;
 import com.smarteist.autoimageslider.IndicatorAnimations;
 import com.smarteist.autoimageslider.SliderAnimations;
@@ -39,6 +40,20 @@ public class HomeFragment extends Fragment {
         bscdepart = (TextView)view.findViewById(R.id.bscDepartment);
         bcomdepart = (TextView)view.findViewById(R.id.bcomDepartment);
         badepart = (TextView)view.findViewById(R.id.baDepartment);
+
+        FloatingActionButton fab = view.findViewById(R.id.fab);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("http://dpbspgcollege.edu.in/"));
+                startActivity(intent);
+            }
+        });
+
+
 
         bcadepart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,7 +128,7 @@ public class HomeFragment extends Fragment {
                     sliderView.setDescription(" ");
                     break;
                 case 1:
-                    sliderView.setImageUrl("https://firebasestorage.googleapis.com/v0/b/dpbs-college-app.appspot.com/o/Slider%20Images%2F6%20(2).jpg?alt=media&token=b7743b13-575c-4dd5-8717-474d6ae5969e");
+                    sliderView.setImageUrl("https://firebasestorage.googleapis.com/v0/b/dpbs-college-app.appspot.com/o/Slider%20Images%2Faccoet.jpg?alt=media&token=d5375bea-acdb-4949-bcf4-a425f00181d5");
                     sliderView.setDescription(" ");
                     break;
                 case 2:
@@ -125,7 +140,7 @@ public class HomeFragment extends Fragment {
                     sliderView.setDescription(" ");
                     break;
                 case 4:
-                    sliderView.setImageUrl("https://firebasestorage.googleapis.com/v0/b/dpbs-college-app.appspot.com/o/Slider%20Images%2F3.jpg?alt=media&token=4fc39285-d182-4a1b-9d71-bca534aaee93");
+                    sliderView.setImageUrl("https://firebasestorage.googleapis.com/v0/b/dpbs-college-app.appspot.com/o/Slider%20Images%2F5%20(1).jpg?alt=media&token=6c5a645d-71ff-45a6-8115-733d78707cb7");
                     sliderView.setDescription(" ");
                     break;
             }

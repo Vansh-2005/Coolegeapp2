@@ -19,6 +19,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="250dp" />
 
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_web_24"
+                android:layout_margin="16dp"
+                android:background="#FFFFFF"
+                />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -29,10 +38,9 @@
                 android:textColor="@color/textColor"
                 android:textSize="@dimen/title_size" />
 
-            <TextView
+            <me.biubiubiu.justifytext.library.JustifyTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
                 android:layout_marginHorizontal="@dimen/text_margin"
                 android:layout_marginTop="@dimen/text_margin"
                 android:padding="@dimen/text_margin"

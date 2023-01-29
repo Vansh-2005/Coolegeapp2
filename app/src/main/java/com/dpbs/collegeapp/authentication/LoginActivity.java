@@ -109,7 +109,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void openRegister() {
-        startActivity(new Intent(LoginActivity.this, com.dpbs.collegeapp.authentication.RegisterActivity.class));
+        startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
         finish();
     }
 }
