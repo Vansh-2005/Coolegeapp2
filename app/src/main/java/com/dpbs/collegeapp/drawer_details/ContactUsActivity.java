@@ -27,7 +27,7 @@ public class ContactUsActivity extends AppCompatActivity {
 
         Element adsElement = new Element();
         View aboutPage = new AboutPage(this)
-                //.setImage(R.drawable.contactus)
+                .setImage(R.drawable.contact)
                 .isRTL(false)
                 .setDescription("Durga Prasad Baljeet Singh (P.G.) College\n" +
                         "Mahashay Durga Prasad Marg\n" +
