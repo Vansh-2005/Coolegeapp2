@@ -32,12 +32,12 @@ public class ContactUsActivity extends AppCompatActivity {
                 .setDescription("Durga Prasad Baljeet Singh (P.G.) College\n" +
                         "Mahashay Durga Prasad Marg\n" +
                         "Anupshahr, District-Bulandshahr (U.P.)-203390\n for any query or suggestion kindly contact us.")
-                .addItem(new Element().setTitle("1.0.3"))
+                .addItem(new Element().setTitle("Version:1.0.3"))
                 .addGroup("Connect With Us")
                 .addEmail("dpbsprincipal@gmail.com")
                 .addWebsite("http://dpbspgcollege.edu.in/")
                 // .addYoutube("https://www.youtube.com/watch?v=LSUAlr7_qmA")
-                .addPlayStore("com.example.collegeapp")
+                .addPlayStore("com.dpbs.collegeapp")
                 .addItem(createCopyright())
                 .create();
         setContentView(aboutPage);

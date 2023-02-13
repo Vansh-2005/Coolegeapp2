@@ -236,9 +236,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(new Intent(this, PrivacyPolicyActivity.class));
                 break;
 
-            case R.id.navigation_contact_us:
-                startActivity(new Intent(this, ContactUsActivity.class));
-                break;
 
             case R.id.navigation_terms_condition:
                 startActivity(new Intent(this, TermsConditionActivity.class));
