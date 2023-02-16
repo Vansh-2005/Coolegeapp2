@@ -1,6 +1,7 @@
 package com.dpbs.collegeapp.Pdf;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -39,7 +40,10 @@ public class PdfActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pdf);
-        getSupportActionBar().setTitle("Pdf");
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("PDF");
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
 
         pdfRecycler = findViewById(R.id.pdfRecycler);
         reference = FirebaseDatabase.getInstance().getReference().child("pdf");

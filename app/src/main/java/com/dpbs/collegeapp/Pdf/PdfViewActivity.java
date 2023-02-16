@@ -1,5 +1,6 @@
 package com.dpbs.collegeapp.Pdf;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.AsyncTask;
@@ -32,7 +33,10 @@ public class PdfViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pdf_view);
-        getSupportActionBar().setTitle("PDFView");
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("PDF View");
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
 
         url = getIntent().getStringExtra("pdfUrl");
         pdfView = findViewById(R.id.pdfView);

@@ -17,16 +17,19 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="357dp"
                 android:layout_height="144.68dp"
-                android:layout_margin="20dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
                 android:background="@drawable/developer_rectangle"
-                android:elevation="4dp">
+                android:elevation="4dp"
+                app:cardBackgroundColor="#f5eee6">
 
                 <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/vansh"
                     android:layout_width="37dp"
                     android:layout_height="37dp"
                     android:layout_margin="5dp"
-                    android:background="@drawable/avatarprofile"
                     android:elevation="4dp" />
 
                 <TextView
@@ -105,15 +108,15 @@
                 android:layout_height="144.68dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="200dp"
+                app:cardBackgroundColor="#f5eee6"
                 android:background="@drawable/developer_rectangle"
                 android:elevation="4dp">
 
                 <de.hdodenhof.circleimageview.CircleImageView
-
+                    android:id="@+id/varsha"
                     android:layout_width="37dp"
                     android:layout_height="37dp"
                     android:layout_margin="5dp"
-                    android:src="@drawable/varsha"
                     android:elevation="4dp" />
 
                 <TextView
@@ -192,15 +195,15 @@
                 android:layout_height="144.68dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="370dp"
+                app:cardBackgroundColor="#f5eee6"
                 android:background="@drawable/developer_rectangle"
                 android:elevation="4dp">
 
                 <de.hdodenhof.circleimageview.CircleImageView
-
+                    android:id="@+id/prathibha"
                     android:layout_width="37dp"
                     android:layout_height="37dp"
                     android:layout_margin="5dp"
-                    android:background="@drawable/avatarprofile"
                     android:elevation="4dp" />
 
                 <TextView
@@ -278,15 +281,16 @@
                 android:layout_width="357dp"
                 android:layout_height="144.68dp"
                 android:layout_marginLeft="15dp"
+                app:cardBackgroundColor="#f5eee6"
                 android:layout_marginTop="540dp"
                 android:background="@drawable/developer_rectangle"
                 android:elevation="4dp">
 
                 <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/sachin"
                     android:layout_width="37dp"
                     android:layout_height="37dp"
                     android:layout_margin="5dp"
-                  android:src="@drawable/sachin"
                     android:elevation="4dp" />
 
                 <TextView
@@ -365,14 +369,15 @@
                 android:layout_height="144.68dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="700dp"
+                app:cardBackgroundColor="#f5eee6"
                 android:background="@drawable/developer_rectangle"
                 android:elevation="4dp">
 
                 <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/kush"
                     android:layout_width="37dp"
                     android:layout_height="37dp"
                     android:layout_margin="5dp"
-                    android:src="@drawable/kush"
                     android:elevation="4dp" />
 
                 <TextView

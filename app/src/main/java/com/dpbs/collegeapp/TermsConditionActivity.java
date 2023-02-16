@@ -1,5 +1,6 @@
 package com.dpbs.collegeapp;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Bitmap;
@@ -18,7 +19,11 @@ public class TermsConditionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_terms_condition);
-        getSupportActionBar().setTitle("Terms & Condition");
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Terms & Condition");
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
 
         progressBar =findViewById(R.id.tcProgress);
         progressBar.setMax(100);

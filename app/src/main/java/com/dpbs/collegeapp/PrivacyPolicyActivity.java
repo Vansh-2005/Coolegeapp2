@@ -1,5 +1,6 @@
 package com.dpbs.collegeapp;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Bitmap;
@@ -18,7 +19,11 @@ public class PrivacyPolicyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_privacy_policy);
-        getSupportActionBar().setTitle("Privacy & Policy");
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Privacy & Policy");
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
 
 
         progressBar =findViewById(R.id.ppProgress);

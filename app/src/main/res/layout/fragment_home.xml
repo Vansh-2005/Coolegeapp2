@@ -8,70 +8,76 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <com.denzcoskun.imageslider.ImageSlider
-                android:id="@+id/image_slider"
-                android:layout_width="wrap_content"
-                android:layout_height="200dp"
-                app:iss_auto_cycle="true"
-                app:iss_delay="0"
-                app:iss_period="1000" />
+        <com.denzcoskun.imageslider.ImageSlider
+            android:id="@+id/image_slider"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            app:iss_auto_cycle="true"
+            app:iss_delay="0"
+            app:iss_period="1000" />
 
-            <View
-                android:layout_width="56dp"
-                android:layout_height="30dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/marquee_rectangle_1" />
+        <View
+            android:layout_width="56dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/marquee_rectangle_1" />
 
-            <me.biubiubiu.justifytext.library.JustifyTextView
-                android:id="@+id/latest"
-                android:layout_width="56dp"
-                android:layout_height="20dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="-26dp"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/latest"
-                android:textAppearance="@style/latest" />
+        <me.biubiubiu.justifytext.library.JustifyTextView
+            android:id="@+id/latest"
+            android:layout_width="56dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="-26dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/latest"
+            android:textAppearance="@style/latest" />
 
-            <View
-                android:id="@+id/marquee1"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="59dp"
-                android:layout_marginTop="-25dp"
-                android:background="@drawable/marquee_rectangle2" />
+        <View
+            android:id="@+id/marquee1"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="59dp"
+            android:layout_marginTop="-25dp"
+            android:background="@drawable/marquee_rectangle2" />
 
-            <TextView
-                android:id="@+id/marquee"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="65dp"
-                android:layout_marginTop="-23dp"
-                android:ellipsize="marquee"
-                android:fadingEdge="horizontal"
-                android:marqueeRepeatLimit="marquee_forever"
-                android:scrollHorizontally="true"
-                android:singleLine="true"
-                android:text="@string/dpbs_offici"
-                android:textColor="#910000"
-                android:textSize="14sp" />
+        <TextView
+            android:id="@+id/marquee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="-23dp"
+            android:ellipsize="marquee"
+            android:fadingEdge="horizontal"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:freezesText="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="@string/dpbs_offici"
+            android:textColor="#910000"
+            android:textSize="14sp" />
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/timeTable"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="75dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="30dp"
@@ -90,7 +96,7 @@
                 <TextView
                     android:id="@+id/timeTableText"
                     android:layout_width="wrap_content"
-                    android:layout_height="26dp"
+                    android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
                     android:layout_marginLeft="9dp"
@@ -106,8 +112,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginLeft="165dp"
-                android:layout_marginTop="-74dp"
+                android:layout_marginLeft="65dp"
+                android:layout_marginTop="34dp"
                 android:background="@drawable/time_table_layout"
                 app:cardBackgroundColor="#866ec7">
 
@@ -136,10 +142,8 @@
                 android:id="@+id/syllabus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="300dp"
-                android:layout_marginTop="-74dp"
+                android:layout_marginLeft="65dp"
+                android:layout_marginTop="34dp"
                 android:background="@drawable/time_table_layout"
                 app:cardBackgroundColor="#866ec7">
 
@@ -149,12 +153,11 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="-10dp"
                     android:padding="15dp"
-                    android:src="@drawable/syllabus"
-                   />
+                    android:src="@drawable/syllabus" />
 
                 <TextView
                     android:id="@+id/syllabusText"
-                    android:layout_width="66dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="26dp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
@@ -164,7 +167,10 @@
                     android:text="@string/syllabus"
                     android:textAppearance="@style/syllabus" />
             </com.google.android.material.card.MaterialCardView>
-
+        </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/events"
                 android:layout_width="wrap_content"
@@ -182,8 +188,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="-10dp"
                     android:padding="15dp"
-                    android:src="@drawable/event"
-                   />
+                    android:src="@drawable/event" />
 
                 <TextView
                     android:id="@+id/eventsText"
@@ -204,8 +209,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginLeft="165dp"
-                android:layout_marginTop="-74dp"
+                android:layout_marginLeft="65dp"
+                android:layout_marginTop="34dp"
                 android:background="@drawable/time_table_layout"
                 app:cardBackgroundColor="#866ec7">
 
@@ -215,8 +220,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="-10dp"
                     android:padding="15dp"
-                    android:src="@drawable/toppers"
-                   />
+                    android:src="@drawable/toppers" />
 
                 <TextView
                     android:id="@+id/topperText"
@@ -235,10 +239,8 @@
                 android:id="@+id/fees"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="300dp"
-                android:layout_marginTop="-74dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="34dp"
                 android:background="@drawable/time_table_layout"
                 app:cardBackgroundColor="#866ec7">
 
@@ -248,8 +250,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="-10dp"
                     android:padding="15dp"
-                    android:src="@drawable/fees"
-                    />
+                    android:src="@drawable/fees" />
 
                 <TextView
                     android:id="@+id/feesText"
@@ -263,6 +264,7 @@
                     android:text="@string/fees"
                     android:textAppearance="@style/exam" />
             </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/contact"
@@ -315,6 +317,7 @@
 
 
             </com.google.android.material.card.MaterialCardView>
+
 
         </LinearLayout>
 

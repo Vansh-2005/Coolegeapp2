@@ -1,5 +1,6 @@
 package com.dpbs.collegeapp.drawer_details;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -23,7 +24,11 @@ public class ContactUsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_us);
-        getSupportActionBar().setTitle("Contact Us");
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Contact Us");
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
 
         Element adsElement = new Element();
         View aboutPage = new AboutPage(this)

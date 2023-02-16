@@ -1,5 +1,6 @@
 package com.dpbs.collegeapp.ui.Videos;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -18,6 +19,12 @@ public class YoutubePlayerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_youtube_player);
         YouTubePlayerView youTubePlayerView = findViewById(R.id.youtube_player_view);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("College Videos");
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
+
         getLifecycle().addObserver(youTubePlayerView);
 
         youTubePlayerView.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {

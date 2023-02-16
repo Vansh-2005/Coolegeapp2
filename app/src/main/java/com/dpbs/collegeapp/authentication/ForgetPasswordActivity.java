@@ -1,6 +1,7 @@
 package com.dpbs.collegeapp.authentication;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -28,6 +29,11 @@ public class ForgetPasswordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forget_password);
         getSupportActionBar().hide();
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("");
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
 
         auth = FirebaseAuth.getInstance();
 

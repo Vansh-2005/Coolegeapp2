@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,25 +17,16 @@ import androidx.fragment.app.Fragment;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
-import com.dpbs.collegeapp.CourseDescriptionHome.BaDepartmentActivity;
-import com.dpbs.collegeapp.CourseDescriptionHome.BcaDepartmentActivity;
-import com.dpbs.collegeapp.CourseDescriptionHome.BcomDepartmentActivity;
-import com.dpbs.collegeapp.CourseDescriptionHome.BscDepartmentActivity;
+import com.dpbs.collegeapp.CardData.Exam.ExamActivity;
+import com.dpbs.collegeapp.CardData.Syllabus.SyllabusActivity;
+import com.dpbs.collegeapp.CardData.TimeTable.TimeTableActivity;
 import com.dpbs.collegeapp.R;
 import com.dpbs.collegeapp.drawer_details.ContactUsActivity;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.Task;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
-import com.smarteist.autoimageslider.SliderLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,8 +67,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         contact.setOnClickListener(this);
         website.setOnClickListener(this);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("News");
-        databaseReference.addValueEventListener(new ValueEventListener() {
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Marquee");
+        databaseReference.child("News").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String link = snapshot.getValue(String.class);
@@ -124,18 +114,22 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         Intent intent;
         switch (view.getId()) {
             case R.id.timeTable:
-                Toast.makeText(getContext(), "Time Table", Toast.LENGTH_SHORT).show();
+                intent = new Intent(getContext(),TimeTableActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.exam:
-                Toast.makeText(getContext(), "Exam", Toast.LENGTH_SHORT).show();
+                intent = new Intent(getContext(), ExamActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.events:
                 Toast.makeText(getContext(), "Events", Toast.LENGTH_SHORT).show();
                 break;
+
             case R.id.syllabus:
-                Toast.makeText(getContext(), "Syllabus", Toast.LENGTH_SHORT).show();
+                intent = new Intent(getContext(), SyllabusActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.toppers:
