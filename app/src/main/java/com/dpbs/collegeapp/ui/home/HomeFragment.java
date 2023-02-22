@@ -18,8 +18,10 @@ import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.dpbs.collegeapp.CardData.Exam.ExamActivity;
+import com.dpbs.collegeapp.CardData.Fees.FeesActivity;
 import com.dpbs.collegeapp.CardData.Syllabus.SyllabusActivity;
 import com.dpbs.collegeapp.CardData.TimeTable.TimeTableActivity;
+import com.dpbs.collegeapp.CardData.Toppers.ToppersActivity;
 import com.dpbs.collegeapp.R;
 import com.dpbs.collegeapp.drawer_details.ContactUsActivity;
 import com.google.firebase.database.DataSnapshot;
@@ -133,11 +135,14 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.toppers:
-                Toast.makeText(getContext(), "Toppers", Toast.LENGTH_SHORT).show();
+                intent = new Intent(getContext(), ToppersActivity.class);
+                startActivity(intent);
                 break;
 
+
             case R.id.fees:
-                Toast.makeText(getContext(), "Fees", Toast.LENGTH_SHORT).show();
+                intent = new Intent(getContext(), FeesActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.contact:

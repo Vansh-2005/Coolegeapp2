@@ -9,6 +9,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
+import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.IntentSender;
@@ -65,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public static int UPDATE_CODE = 22;
     AppUpdateManager appUpdateManager;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -174,7 +176,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void openLogin() {
 
-        Toast.makeText(this, "Logout Succesfully", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "Logout Succesfully", Toast.LENGTH_SHORT).show();
         startActivity(new Intent(MainActivity.this, LoginActivity.class));
         finish();
     }
