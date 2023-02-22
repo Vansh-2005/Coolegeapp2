@@ -13,29 +13,22 @@ import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.IntentSender;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
-import android.widget.Button;
-import android.widget.Toast;
 
 import com.dpbs.collegeapp.Pdf.PdfActivity;
 import com.dpbs.collegeapp.authentication.LoginActivity;
-import com.dpbs.collegeapp.drawer_details.ContactUsActivity;
 import com.dpbs.collegeapp.drawer_details.DeveloperActivity;
-import com.dpbs.collegeapp.ui.Videos.YoutubePlayerActivity;
-import com.dpbs.collegeapp.ui.home.HomeFragment;
+import com.dpbs.collegeapp.ui.Videos.VideoActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.play.core.appupdate.AppUpdateInfo;
 import com.google.android.play.core.appupdate.AppUpdateManager;
@@ -197,10 +190,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 //Toast.makeText(this,"Developer",Toast.LENGTH_SHORT).show();
                 break;
 
-            case R.id.navigation_video:
-                startActivity(new Intent(this, YoutubePlayerActivity.class));
-                //Toast.makeText(this,"Video Lectures",Toast.LENGTH_SHORT).show();
-                break;
 
             case R.id.navigation_share:
                 Intent shareIntent = new Intent();
@@ -241,6 +230,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             case R.id.navigation_terms_condition:
                 startActivity(new Intent(this, TermsConditionActivity.class));
+                break;
+
+            case R.id.navigation_video:
+                startActivity(new Intent(this, VideoActivity.class));
                 break;
         }
 

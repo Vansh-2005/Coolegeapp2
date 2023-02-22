@@ -17,6 +17,7 @@ import androidx.fragment.app.Fragment;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
+import com.dpbs.collegeapp.CardData.Events.EventsActivity;
 import com.dpbs.collegeapp.CardData.Exam.ExamActivity;
 import com.dpbs.collegeapp.CardData.Fees.FeesActivity;
 import com.dpbs.collegeapp.CardData.Syllabus.SyllabusActivity;
@@ -126,7 +127,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.events:
-                Toast.makeText(getContext(), "Events", Toast.LENGTH_SHORT).show();
+                intent = new Intent(getContext(), EventsActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.syllabus:

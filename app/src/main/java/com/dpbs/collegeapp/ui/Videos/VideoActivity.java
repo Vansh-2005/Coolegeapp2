@@ -12,7 +12,7 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTube
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 
-public class YoutubePlayerActivity extends AppCompatActivity {
+public class VideoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

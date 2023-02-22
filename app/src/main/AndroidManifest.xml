@@ -11,16 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CollegeApp2">
+
+        <activity
+            android:name=".CardData.Events.EventsActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".CardData.Fees.FeesActivity"
-            android:parentActivityName=".MainActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".CardData.Toppers.ToppersActivity"
-            android:parentActivityName=".MainActivity"
-            android:exported="true" >
-
-        </activity>
+            android:exported="true"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".CardData.Syllabus.SyllabusActivity"
             android:exported="false"
@@ -40,7 +43,7 @@
             android:name=".PrivacyPolicyActivity"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".ui.Videos.YoutubePlayerActivity"
+            android:name=".ui.Videos.VideoActivity"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".FullImageView" />
         <activity

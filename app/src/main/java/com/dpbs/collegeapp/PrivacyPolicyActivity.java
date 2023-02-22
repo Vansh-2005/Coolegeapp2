@@ -31,6 +31,7 @@ public class PrivacyPolicyActivity extends AppCompatActivity {
 
         webView = (WebView) findViewById(R.id.privacy);
         webView.getSettings().setJavaScriptEnabled(true);
+       // webView.loadUrl("https://firebasestorage.googleapis.com/v0/b/dpbs-college-app.appspot.com/o/Html%20Files%2Fiframe.html?alt=media&token=eed63325-8c43-4d09-bc6f-a15ef8ebb7c7");
         webView.loadUrl("https://firebasestorage.googleapis.com/v0/b/dpbs-college-app.appspot.com/o/Html%20Files%2Fprivacy.html?alt=media&token=97c06e59-a09b-4a48-ae1e-82a5864e049a");
         // webView.loadUrl("file:///android_asset/"+fileName);
 
