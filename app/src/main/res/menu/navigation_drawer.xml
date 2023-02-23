@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/navigation_video"
-        android:title="College Videos"
-        android:icon="@drawable/ic_video_lecture"/>
+
 
     <item android:id="@+id/navigation_pdf"
         android:title="Pdf"
@@ -10,7 +8,11 @@
 
     <item android:id="@+id/navigation_website"
         android:title="Website"
-        android:icon="@drawable/ic_website"/>
+        android:icon="@drawable/baseline_web_24"/>
+
+    <item android:id="@+id/navigation_video"
+        android:title="College Videos"
+        android:icon="@drawable/ic_video_lecture"/>
 
     <item android:id="@+id/navigation_share"
         android:title="Share"
@@ -27,10 +29,6 @@
     <item android:id="@+id/navigation_terms_condition"
         android:title="Terms &amp; Condition"
         android:icon="@drawable/ic_terms_condition"/>
-
-    <item android:id="@+id/navigation_contact_us"
-        android:title="Contact Us"
-        android:icon="@drawable/ic_contact_us"/>
 
     <item android:id="@+id/navigation_developer"
         android:title="Developer Contact"

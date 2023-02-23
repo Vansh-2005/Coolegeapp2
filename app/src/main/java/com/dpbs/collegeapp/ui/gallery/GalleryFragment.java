@@ -9,6 +9,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.dpbs.collegeapp.R;
@@ -62,7 +63,15 @@ public class GalleryFragment extends Fragment {
                     String data = (String) snapshot.getValue();
                     imageList.add(data);
                 }
-                adapter = new com.dpbs.collegeapp.ui.gallery.GalleryAdapter(getContext(),imageList);
+
+//                GridLayoutManager layoutManager = new GridLayoutManager(getContext(),3);
+//                adapter = new GalleryAdapter(getContext(),imageList);
+//                sportRecycler.setLayoutManager(layoutManager);
+//                layoutManager.setReverseLayout(true);
+//                layoutManager.setStackFromEnd(true);
+//                sportRecycler.setAdapter(adapter);
+
+                adapter = new GalleryAdapter(getContext(),imageList);
                 sportRecycler.setLayoutManager(new GridLayoutManager(getContext(),3));
                 sportRecycler.setAdapter(adapter);
             }

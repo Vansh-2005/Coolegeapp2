@@ -1,136 +1,163 @@
 package com.dpbs.collegeapp.ui.home;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
-import com.dpbs.collegeapp.CourseDescriptionHome.BaDepartmentActivity;
-import com.dpbs.collegeapp.CourseDescriptionHome.BcaDepartmentActivity;
-import com.dpbs.collegeapp.CourseDescriptionHome.BcomDepartmentActivity;
-import com.dpbs.collegeapp.CourseDescriptionHome.BscDepartmentActivity;
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.models.SlideModel;
+import com.dpbs.collegeapp.CardData.Events.EventsActivity;
+import com.dpbs.collegeapp.CardData.Exam.ExamActivity;
+import com.dpbs.collegeapp.CardData.Fees.FeesActivity;
+import com.dpbs.collegeapp.CardData.Syllabus.SyllabusActivity;
+import com.dpbs.collegeapp.CardData.TimeTable.TimeTableActivity;
+import com.dpbs.collegeapp.CardData.Toppers.ToppersActivity;
 import com.dpbs.collegeapp.R;
-import com.smarteist.autoimageslider.DefaultSliderView;
-import com.smarteist.autoimageslider.IndicatorAnimations;
-import com.smarteist.autoimageslider.SliderAnimations;
-import com.smarteist.autoimageslider.SliderLayout;
+import com.dpbs.collegeapp.drawer_details.ContactUsActivity;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-public class HomeFragment extends Fragment {
-    private SliderLayout sliderLayout;
-    private ImageView mapLocation;
-    TextView bcadepart,bscdepart,bcomdepart,badepart;
+import java.util.ArrayList;
+import java.util.List;
 
+public class HomeFragment extends Fragment implements View.OnClickListener {
+
+    private ImageSlider mainslider;
+    private DatabaseReference databaseReference;
+    private TextView marquee;
+
+    CardView timeTable, exam, syllabus, events, toppers, fees, contact, website;
+    //private ImageView mapLocation;
+    //TextView bcadepart,bscdepart,bcomdepart,badepart;
+
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_home,container,false);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        marquee = view.findViewById(R.id.marquee);
+        timeTable = view.findViewById(R.id.timeTable);
+        exam = view.findViewById(R.id.exam);
+        syllabus = view.findViewById(R.id.syllabus);
+        events = view.findViewById(R.id.events);
+        toppers = view.findViewById(R.id.toppers);
+        fees = view.findViewById(R.id.fees);
+        contact = view.findViewById(R.id.contact);
+        website = view.findViewById(R.id.website);
+
+        timeTable.setOnClickListener(this);
+        exam.setOnClickListener(this);
+        syllabus.setOnClickListener(this);
+        events.setOnClickListener(this);
+        toppers.setOnClickListener(this);
+        fees.setOnClickListener(this);
+        contact.setOnClickListener(this);
+        website.setOnClickListener(this);
+
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Marquee");
+        databaseReference.child("News").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String link = snapshot.getValue(String.class);
+                marquee.setSelected(true);
+                marquee.setText(link);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
         //Getting the image slder
 
-        sliderLayout = view.findViewById(R.id.slider);
+        mainslider = (ImageSlider) view.findViewById(R.id.image_slider);
+        final List<SlideModel> remoteimages = new ArrayList<>();
+        FirebaseDatabase.getInstance().getReference().child("Slider")
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        for (DataSnapshot data : snapshot.getChildren())
+                            remoteimages.add(new SlideModel(data.child("url").getValue().toString()
+                                    , data.child("title").getValue().toString(), ScaleTypes.FIT));
 
-        bcadepart = (TextView)view.findViewById(R.id.bcaDepartment);
-        bscdepart = (TextView)view.findViewById(R.id.bscDepartment);
-        bcomdepart = (TextView)view.findViewById(R.id.bcomDepartment);
-        badepart = (TextView)view.findViewById(R.id.baDepartment);
+                        mainslider.setImageList(remoteimages, ScaleTypes.FIT);
+                    }
 
-        bcadepart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setClass(getActivity(), BcaDepartmentActivity.class);
-                startActivity(intent);
-            }
-        });
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
 
-        bscdepart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setClass(getActivity(), BscDepartmentActivity.class);
-                startActivity(intent);
-            }
-        });
+                    }
+                });
 
-        bcomdepart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setClass(getActivity(), BcomDepartmentActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        badepart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setClass(getActivity(), BaDepartmentActivity.class);
-                startActivity(intent);
-            }
-        });
-        //Adding some properties of slider layout
-        sliderLayout.setIndicatorAnimation(IndicatorAnimations.FILL);
-        sliderLayout.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
-        sliderLayout.setScrollTimeInSec(3);
-
-        setSliderImages();
-
-        mapLocation = view.findViewById(R.id.mapLocation);
-        mapLocation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openMap();
-            }
-        });
 
         return view;
     }
 
+    @Override
+    public void onClick(View view) {
 
-    private void openMap() {
-        Uri uri = Uri.parse("geo:0,0?q=Durga Prasad Baljeet Singh (PG) College, Anupshahr");
+        Intent intent;
+        switch (view.getId()) {
+            case R.id.timeTable:
+                intent = new Intent(getContext(),TimeTableActivity.class);
+                startActivity(intent);
+                break;
 
-        Intent intent = new Intent(Intent.ACTION_VIEW,uri);
-        intent.setPackage("com.google.android.apps.maps");
-        startActivity(intent);
-    }
+            case R.id.exam:
+                intent = new Intent(getContext(), ExamActivity.class);
+                startActivity(intent);
+                break;
 
-    private void setSliderImages() {
-        //setting the number of images and getting them
-        for (int i = 0;i<5;i++)
-        {
-            DefaultSliderView sliderView = new DefaultSliderView(getContext());
-            switch(i){
-                case 0:
-                    sliderView.setImageUrl("https://firebasestorage.googleapis.com/v0/b/dpbs-college-app.appspot.com/o/Slider%20Images%2F5%20(1).jpg?alt=media&token=6c5a645d-71ff-45a6-8115-733d78707cb7");
-                    sliderView.setDescription(" ");
-                    break;
-                case 1:
-                    sliderView.setImageUrl("https://firebasestorage.googleapis.com/v0/b/dpbs-college-app.appspot.com/o/Slider%20Images%2F6%20(2).jpg?alt=media&token=b7743b13-575c-4dd5-8717-474d6ae5969e");
-                    sliderView.setDescription(" ");
-                    break;
-                case 2:
-                    sliderView.setImageUrl("https://firebasestorage.googleapis.com/v0/b/dpbs-college-app.appspot.com/o/Slider%20Images%2FWhatsApp%20Image%202022-11-27%20at%2011.46.34%20AM%20(1).jpeg?alt=media&token=16ac39cf-341c-43d1-a31e-973f8e7e91ee");
-                    sliderView.setDescription(" ");
-                    break;
-                case 3:
-                    sliderView.setImageUrl("https://firebasestorage.googleapis.com/v0/b/dpbs-college-app.appspot.com/o/Slider%20Images%2FWhatsApp%20Image%202022-11-28%20at%206.14.37%20PM.jpeg?alt=media&token=4d9a936b-eaf3-4f77-8d71-ee3089eb7b4a");
-                    sliderView.setDescription(" ");
-                    break;
-                case 4:
-                    sliderView.setImageUrl("https://firebasestorage.googleapis.com/v0/b/dpbs-college-app.appspot.com/o/Slider%20Images%2F3.jpg?alt=media&token=4fc39285-d182-4a1b-9d71-bca534aaee93");
-                    sliderView.setDescription(" ");
-                    break;
-            }
-            sliderView.setImageScaleType(ImageView.ScaleType.FIT_XY);
-            sliderLayout.addSliderView(sliderView);
+            case R.id.events:
+                intent = new Intent(getContext(), EventsActivity.class);
+                startActivity(intent);
+                break;
+
+            case R.id.syllabus:
+                intent = new Intent(getContext(), SyllabusActivity.class);
+                startActivity(intent);
+                break;
+
+            case R.id.toppers:
+                intent = new Intent(getContext(), ToppersActivity.class);
+                startActivity(intent);
+                break;
+
+
+            case R.id.fees:
+                intent = new Intent(getContext(), FeesActivity.class);
+                startActivity(intent);
+                break;
+
+            case R.id.contact:
+               intent = new Intent(getContext(),ContactUsActivity.class);
+               startActivity(intent);
+                break;
+
+            case R.id.website:
+                intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("http://dpbspgcollege.edu.in/"));
+                startActivity(intent);
+                break;
         }
     }
 }
+

@@ -3,39 +3,45 @@ plugins {
     id 'com.google.gms.google-services'
     id 'com.google.firebase.crashlytics'
 }
-//def keystoreReleasePropertiesFile = rootProject.file("keystore-release.properties")
-//def keystoreReleaseProperties = new Properties()
-//keystoreReleaseProperties.load(new FileInputStream(keystoreReleasePropertiesFile))
+def keystoreReleasePropertiesFile = rootProject.file("keystore-release.properties")
+def keystoreReleaseProperties = new Properties()
+keystoreReleaseProperties.load(new FileInputStream(keystoreReleasePropertiesFile))
 
 android {
+
+    lintOptions{
+        checkReleaseBuilds false
+    }
+
     compileSdkVersion 32
     buildToolsVersion "30.0.3"
+
 
     defaultConfig {
         applicationId "com.dpbs.collegeapp"
         minSdkVersion 19
-        targetSdkVersion 30
-        versionCode 100
-        versionName "1.0.0"
+        targetSdkVersion 32
+        versionCode 103
+        versionName "1.0.3"
         multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-//    signingConfigs {
-//        Release {
-//            keyAlias keystoreReleaseProperties['keyAlias']
-//            keyPassword keystoreReleaseProperties['keyPassword']
-//            storeFile file(keystoreReleaseProperties['storeFile'])
-//            storePassword keystoreReleaseProperties['storePassword']
-//        }
-//    }
+    signingConfigs {
+        Release {
+            keyAlias keystoreReleaseProperties['keyAlias']
+            keyPassword keystoreReleaseProperties['keyPassword']
+            storeFile file(keystoreReleaseProperties['storeFile'])
+            storePassword keystoreReleaseProperties['storePassword']
+        }
+    }
 
     flavorDimensions  "server"
 
     productFlavors {
         collegeapp {
             dimension "server"
-           // signingConfig signingConfigs.Release
+            signingConfig signingConfigs.Release
         }
     }
 
@@ -46,8 +52,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         release {
-            minifyEnabled true
-            debuggable false
+            minifyEnabled false
+            debuggable true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 //            signingConfig signingConfigs.reunionRelease
         }
@@ -112,6 +118,7 @@ dependencies {
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
     //for Zooming effect
     implementation 'com.github.chrisbanes:PhotoView:2.3.0'
+    implementation 'com.jsibbold:zoomage:1.3.1'
     //For youtube player
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
     //PDF viewer
@@ -120,4 +127,10 @@ dependencies {
     implementation 'com.github.kk121:File-Loader:1.2'
     //Contact Us
     implementation 'io.github.medyo:android-about-page:2.0.0'
+    //for in app update notification
+    implementation 'com.google.android.play:core:1.10.3'
+    //justify text
+    implementation 'me.biubiubiu.justifytext:library:1.1'
+    //imageslider
+    implementation 'com.github.denzcoskun:ImageSlideshow:0.0.7'
 }

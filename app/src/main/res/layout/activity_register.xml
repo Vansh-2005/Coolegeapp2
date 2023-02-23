@@ -41,7 +41,7 @@
                         android:layout_height="wrap_content"
                         android:text=" '' Education is the most powerful weapon which you can use to change the world ''"
                         android:textColor="#FFEB3B"
-                        android:textSize="21dp"
+                        android:textSize="20dp"
                         android:textStyle="bold"
                         android:layout_marginLeft="@dimen/text_margin"
                         android:layout_marginRight="@dimen/text_margin"
@@ -120,7 +120,7 @@
                             <com.google.android.material.textfield.TextInputEditText
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="Password"
+                                android:hint="New Password"
                                 android:inputType="textPassword"
                                 android:id="@+id/regPass"/>
 
@@ -133,12 +133,14 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Already registered ?"/>
+                                android:text="Already registered ?"
+                                android:textSize="16dp"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Login here"
                                 android:layout_marginLeft="8dp"
+                                android:textSize="18dp"
                                 android:id="@+id/openLog"
                                 android:textColor="@color/colorPrimary"/>
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,208 +8,320 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <com.smarteist.autoimageslider.SliderLayout
-                android:id="@+id/slider"
-                android:layout_width="match_parent"
-                android:layout_height="250dp" />
+        <com.denzcoskun.imageslider.ImageSlider
+            android:id="@+id/image_slider"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            app:iss_auto_cycle="true"
+            app:iss_delay="0"
+            app:iss_period="1000" />
 
-            <TextView
+        <View
+            android:layout_width="56dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/marquee_rectangle_1" />
+
+        <me.biubiubiu.justifytext.library.JustifyTextView
+            android:id="@+id/latest"
+            android:layout_width="56dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="-26dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/latest"
+            android:textAppearance="@style/latest" />
+
+        <View
+            android:id="@+id/marquee1"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="59dp"
+            android:layout_marginTop="-25dp"
+            android:background="@drawable/marquee_rectangle2" />
+
+        <TextView
+            android:id="@+id/marquee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="-23dp"
+            android:ellipsize="marquee"
+            android:fadingEdge="horizontal"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:freezesText="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="@string/dpbs_offici"
+            android:textColor="#910000"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/timeTable"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="36dp"
-                android:fontFamily="@font/latobold"
-                android:text="DPBS College Anoopshahr"
-                android:textColor="@color/textColor"
-                android:textSize="@dimen/title_size" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginHorizontal="@dimen/text_margin"
-                android:layout_marginTop="@dimen/text_margin"
-                android:fontFamily="@font/latolight"
-                android:text="@string/about_college"
-                android:textColor="@color/textColor"
-                android:textSize="@dimen/text_size" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="36dp"
-                android:background="@color/darkcolor">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="36dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="@dimen/text_margin"
-                        android:fontFamily="@font/latolight"
-                        android:text="Departments"
-                        android:textColor="#fff"
-                        android:textSize="@dimen/title_size" />
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="#fff"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/bcaDepartment"
-                                android:layout_width="wrap_content"
-                                android:layout_height="28dp"
-                                android:layout_gravity="center_horizontal"
-                                android:layout_margin="8dp"
-                                android:layout_marginHorizontal="@dimen/text_margin"
-                                android:layout_marginTop="@dimen/text_margin"
-                                android:fontFamily="@font/latolight"
-                                android:text="Bachelor Of Computer Application"
-                                android:textAlignment="center"
-                                android:textColor="@color/textColor"
-                                android:textSize="@dimen/text_size" />
-
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:background="@color/grey" />
-
-                            <TextView
-                                android:id="@+id/bscDepartment"
-                                android:layout_width="wrap_content"
-                                android:layout_height="28dp"
-                                android:layout_gravity="center_horizontal"
-                                android:layout_margin="8dp"
-                                android:layout_marginHorizontal="@dimen/text_margin"
-                                android:layout_marginTop="22dp"
-                                android:fontFamily="@font/latolight"
-                                android:text="B.SC. Department"
-                                android:textColor="@color/textColor"
-                                android:textSize="@dimen/text_size" />
-
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:background="@color/grey" />
-
-                            <TextView
-                                android:id="@+id/bcomDepartment"
-                                android:layout_width="wrap_content"
-                                android:layout_height="28dp"
-                                android:layout_gravity="center_horizontal"
-                                android:layout_margin="8dp"
-                                android:layout_marginHorizontal="@dimen/text_margin"
-                                android:layout_marginTop="18dp"
-                                android:fontFamily="@font/latolight"
-                                android:text="B.COM. Department"
-                                android:textColor="@color/textColor"
-                                android:textSize="@dimen/text_size" />
-
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:background="@color/grey" />
-
-                            <TextView
-                                android:id="@+id/baDepartment"
-                                android:layout_width="wrap_content"
-                                android:layout_height="28dp"
-                                android:layout_gravity="center_horizontal"
-                                android:layout_margin="8dp"
-                                android:layout_marginHorizontal="@dimen/text_margin"
-                                android:layout_marginTop="18dp"
-                                android:fontFamily="@font/latolight"
-                                android:text="B.A. Department"
-                                android:textColor="@color/textColor"
-                                android:textSize="@dimen/text_size" />
-
-                        </LinearLayout>
-
-                    </com.google.android.material.card.MaterialCardView>
-
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="@dimen/text_margin">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="36dp"
-                    android:fontFamily="@font/latobold"
-                    android:text="Contact Details"
-                    android:textColor="@color/textColor"
-                    android:textSize="@dimen/title_size" />
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/text_margin"
-                    android:layout_marginTop="@dimen/text_margin"
-                    android:fontFamily="@font/latolight"
-                    android:text="@string/app_name"
-                    android:textColor="@color/textColor"
-                    android:textSize="@dimen/text_size" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/text_margin"
-                    android:layout_marginTop="@dimen/text_margin"
-                    android:fontFamily="@font/latolight"
-                    android:text="Durga Prasad Baljeet Singh (PG) College, Anupshahr,Distt. Bulandshahr"
-                    android:textColor="@color/textColor"
-                    android:textSize="@dimen/text_size" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/text_margin"
-                    android:layout_marginTop="@dimen/text_margin"
-                    android:fontFamily="@font/latolight"
-                    android:text="Phone- 078950 05734"
-                    android:textColor="@color/textColor"
-                    android:textSize="@dimen/text_size" />
+                android:layout_height="75dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="34dp"
+                android:background="@drawable/time_table_layout"
+                app:cardBackgroundColor="#866ec7">
 
                 <ImageView
-                    android:id="@+id/mapLocation"
-                    android:layout_width="373dp"
-                    android:layout_height="230dp"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/adressimage" />
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="-10dp"
+                    android:padding="15dp"
+                    android:src="@drawable/ic_timetable" />
 
+                <TextView
+                    android:id="@+id/timeTableText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="9dp"
+                    android:layout_marginTop="48dp"
+                    android:gravity="center"
+                    android:text="@string/timetable"
+                    android:textAppearance="@style/timetable" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/exam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="65dp"
+                android:layout_marginTop="34dp"
+                android:background="@drawable/time_table_layout"
+                app:cardBackgroundColor="#866ec7">
+
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="-10dp"
+                    android:padding="15dp"
+                    android:src="@drawable/exam" />
+
+                <TextView
+                    android:id="@+id/examText"
+                    android:layout_width="66dp"
+                    android:layout_height="26dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginTop="48dp"
+                    android:gravity="center"
+                    android:text="@string/exam"
+                    android:textAppearance="@style/exam" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/syllabus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="65dp"
+                android:layout_marginTop="34dp"
+                android:background="@drawable/time_table_layout"
+                app:cardBackgroundColor="#866ec7">
+
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="-10dp"
+                    android:padding="15dp"
+                    android:src="@drawable/syllabus" />
+
+                <TextView
+                    android:id="@+id/syllabusText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="26dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="9dp"
+                    android:layout_marginTop="48dp"
+                    android:gravity="center"
+                    android:text="@string/syllabus"
+                    android:textAppearance="@style/syllabus" />
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/events"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="34dp"
+                android:background="@drawable/time_table_layout"
+                app:cardBackgroundColor="#866ec7">
+
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="-10dp"
+                    android:padding="15dp"
+                    android:src="@drawable/event" />
+
+                <TextView
+                    android:id="@+id/eventsText"
+                    android:layout_width="66dp"
+                    android:layout_height="26dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="9dp"
+                    android:layout_marginTop="48dp"
+                    android:gravity="center"
+                    android:text="@string/events"
+                    android:textAppearance="@style/timetable" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/toppers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="65dp"
+                android:layout_marginTop="34dp"
+                android:background="@drawable/time_table_layout"
+                app:cardBackgroundColor="#866ec7">
+
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="-10dp"
+                    android:padding="15dp"
+                    android:src="@drawable/toppers" />
+
+                <TextView
+                    android:id="@+id/topperText"
+                    android:layout_width="66dp"
+                    android:layout_height="26dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="9dp"
+                    android:layout_marginTop="48dp"
+                    android:gravity="center"
+                    android:text="@string/toppers"
+                    android:textAppearance="@style/exam" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/fees"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="34dp"
+                android:background="@drawable/time_table_layout"
+                app:cardBackgroundColor="#866ec7">
+
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="-10dp"
+                    android:padding="15dp"
+                    android:src="@drawable/fees" />
+
+                <TextView
+                    android:id="@+id/feesText"
+                    android:layout_width="66dp"
+                    android:layout_height="26dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="47dp"
+                    android:gravity="center"
+                    android:text="@string/fees"
+                    android:textAppearance="@style/exam" />
+            </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/contact"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="58dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/contact_vector"
+                app:cardBackgroundColor="#866ec7">
+
+                <TextView
+                    android:id="@+id/TextContact"
+                    android:layout_width="300dp"
+                    android:layout_height="26dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/contact"
+                    android:textAppearance="@style/contact_us" />
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/website"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="58dp"
+                android:layout_marginTop="33dp"
+                android:background="@drawable/contact_vector"
+                app:cardBackgroundColor="#866ec7">
+
+                <TextView
+                    android:id="@+id/TextWebsite"
+                    android:layout_width="300dp"
+                    android:layout_height="26dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/website"
+                    android:textAppearance="@style/contact_us" />
+
+
+            </com.google.android.material.card.MaterialCardView>
+
 
         </LinearLayout>
 
     </ScrollView>
 
 
-</FrameLayout>
+</LinearLayout>

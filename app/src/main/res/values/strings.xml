@@ -12,7 +12,7 @@
     <string name="about_college">DPBS College was established in 1965 by the Anglo Vedic Educational Association (AVEA), Anoopshahr to keep the memories of late Shri Durga Prasad Ji, a great social activist and educationist, alive and to promote higher education in backward area. Till 1983 the college was offering only BSc degree at the under graduate level. In 1984 the building was constructed and donated to the college by Jaiprakash Seva Sansthan for the Arts faculty. This contribution was acknowledged by then Management by adding the name of Shri Baljeet Singh, the father of Shri Jaiprakash Gaur to the institution. Since then the institution is known as Durga Prasad Baljeet Singh College. PG classes were started in Physics and Sanskrit subjects in 1992, BCA in 2001, MSc (Chemistry), 2001, BEd (2002) and BCom (2005).</string>
     <string name="principal_desk">Education is not only collection of information but something more meaningful, Education should be man-making, life giving and character-building. Education is an assimilation of noble ideas.
 
-I am overjoyed to welcome you on the website of Durga Prasad Baljeet Singh (Post Graduate) College, which is located at Anoopshahr (Choti Kashi) District Bulandshahr.
+I am overjoyed to welcome you on the Application of Durga Prasad Baljeet Singh (Post Graduate) College, which is located at Anoopshahr (Choti Kashi) District Bulandshahr.
 
 The College has a rich tradition of soaring high with academic excellence and overall personal growth of the students. The purpose of education is to teach our students to think and develop a capacity to reason out facts and this is achieved by providing them excellent academic environment, highly developed infrastructure, Updated Classrooms, Modernized laboratories and dedicated and highly qualified Professors with decades of teaching experience.
 
@@ -21,4 +21,25 @@ In order to accomplish our vision and mission, we are prepared to take as much e
 The Behavioural discipline, moral integrity and cognitive development of our students is the hallmark of our college.
 
 wish you all the very best..........</string>
+
+    <string name="latest">Latest</string>
+    <string name="dpbs_offici">DPBS official app will be launched soon...</string>
+    <string name="timetable">TIMETABLE</string>
+    <string name="exam">EXAM</string>
+    <string name="syllabus">SYLLABUS</string>
+    <string name="events">EVENTS</string>
+    <string name="toppers">TOPPERS</string>
+    <string name="fees">FEES</string>
+    <string name="contact">CONTACT US</string>
+    <string name="website">VISIT WEBSITE</string>
+    <string name="vansh_goyal">Vansh Goyal</string>
+    <string name="co_founder_">Co-founder,\nDeveloper</string>
+    <string name="department">Department</string>
+    <string name="bca">BCA</string>
+    <string name="graduated_i">Graduated in</string>
+    <string name="some_id">2020-2023</string>
+
+    <string name="event_text">Welcome to DPBS College application</string>
+
+
 </resources>

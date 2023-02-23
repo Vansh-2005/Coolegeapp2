@@ -11,22 +11,67 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CollegeApp2">
-        <activity android:name=".TermsConditionActivity"></activity>
-        <activity android:name=".PrivacyPolicyActivity" />
-        <activity android:name=".ui.Videos.YoutubePlayerActivity" />
+
+        <activity
+            android:name=".CardData.Events.EventsActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".CardData.Fees.FeesActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".CardData.Toppers.ToppersActivity"
+            android:exported="true"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".CardData.Syllabus.SyllabusActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".CardData.Exam.ExamActivity"
+            android:exported="true"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".CardData.TimeTable.TimeTableActivity"
+            android:exported="true"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".TermsConditionActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".PrivacyPolicyActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ui.Videos.VideoActivity"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".FullImageView" />
-        <activity android:name=".Pdf.PdfViewActivity" />
-        <activity android:name=".Pdf.PdfActivity" />
+        <activity
+            android:name=".Pdf.PdfViewActivity"
+            android:parentActivityName=".Pdf.PdfActivity" />
+        <activity
+            android:name=".Pdf.PdfActivity"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".CourseDescriptionHome.BscDepartmentActivity" />
         <activity android:name=".CourseDescriptionHome.BcomDepartmentActivity" />
         <activity android:name=".CourseDescriptionHome.BcaDepartmentActivity" />
         <activity android:name=".CourseDescriptionHome.BaDepartmentActivity" />
-        <activity android:name=".drawer_details.DeveloperActivity" />
-        <activity android:name=".drawer_details.ContactUsActivity" />
-        <activity android:name=".authentication.RegisterActivity" />
+        <activity
+            android:name=".drawer_details.DeveloperActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".drawer_details.ContactUsActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".authentication.RegisterActivity"
+            android:parentActivityName=".authentication.LoginActivity" />
         <activity android:name=".authentication.LoginActivity" />
-        <activity android:name=".authentication.ForgetPasswordActivity" />
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".authentication.ForgetPasswordActivity"
+            android:parentActivityName=".authentication.LoginActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

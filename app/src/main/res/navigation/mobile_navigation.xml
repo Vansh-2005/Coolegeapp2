@@ -30,5 +30,4 @@
         android:label="About"
         tools:Layout = "@layout/fragment_about"/>
 
-
 </navigation>

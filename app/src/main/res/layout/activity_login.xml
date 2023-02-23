@@ -34,15 +34,14 @@
                         android:textSize="32sp"
                         android:textStyle="bold"
                         android:layout_marginTop="16dp"
-                        android:layout_gravity="center_horizontal
-"/>
+                        android:layout_gravity="center_horizontal"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text=" '' Education is the key to unlock the golden door of freedom ''"
+                        android:text=" '' Education is the key to unlock the golden door of freedom''"
                         android:textColor="#FFEB3B"
-                        android:textSize="23dp"
+                        android:textSize="22dp"
                         android:textStyle="bold"
                         android:layout_marginLeft="@dimen/text_margin"
                         android:layout_marginRight="@dimen/text_margin"
@@ -123,11 +122,13 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Not yet registered ?"/>
+                                android:text="Not yet registered ?"
+                                android:textSize="16dp"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Register here"
+                                android:textSize="18dp"
                                 android:layout_marginLeft="8dp"
                                 android:id="@+id/openReg"
                                 android:textColor="@color/colorPrimary"/>
@@ -139,6 +140,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Forget Password ?"
+                            android:textSize="18dp"
                             android:textColor="@color/colorPrimary" />
                     </LinearLayout>
 

@@ -1,5 +1,6 @@
 package com.dpbs.collegeapp.drawer_details;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -23,21 +24,25 @@ public class ContactUsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_us);
-        getSupportActionBar().setTitle("Contact Us");
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Contact Us");
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
 
         Element adsElement = new Element();
         View aboutPage = new AboutPage(this)
-              // .setImage(R.drawable.collegelogo)
+                .setImage(R.drawable.contact)
                 .isRTL(false)
                 .setDescription("Durga Prasad Baljeet Singh (P.G.) College\n" +
                         "Mahashay Durga Prasad Marg\n" +
                         "Anupshahr, District-Bulandshahr (U.P.)-203390\n for any query or suggestion kindly contact us.")
-                .addItem(new Element().setTitle("Version 1.0.0"))
+                .addItem(new Element().setTitle("Version:1.0.3"))
                 .addGroup("Connect With Us")
                 .addEmail("dpbsprincipal@gmail.com")
                 .addWebsite("http://dpbspgcollege.edu.in/")
                 // .addYoutube("https://www.youtube.com/watch?v=LSUAlr7_qmA")
-                .addPlayStore("com.example.collegeapp")
+                .addPlayStore("com.dpbs.collegeapp")
                 .addItem(createCopyright())
                 .create();
         setContentView(aboutPage);

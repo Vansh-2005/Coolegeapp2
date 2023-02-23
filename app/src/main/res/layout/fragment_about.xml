@@ -23,14 +23,13 @@
             android:layout_marginLeft="15dp"/>
 
 
-        <TextView
+        <me.biubiubiu.justifytext.library.JustifyTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="15dp"
             android:layout_marginTop="@dimen/text_margin"
-            android:layout_marginHorizontal="18dp"
             android:text="@string/principal_desk"
             android:textSize="@dimen/text_size"
-            android:layout_gravity="center_horizontal"
             android:textColor="@color/textColor"
             android:fontFamily="@string/light"/>
 
